@@ -1,0 +1,60 @@
+﻿@model CreditoCarteraAdmin_AbInBev.Models.CarteraAnalytics
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2 class="text-white-50">Crear nuevo cliente</h2>
+
+<h4 class="text-white">Cartera Analytics</h4>
+<hr />
+<div class="container position-relative text-white-50">
+    <form asp-action="Create">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="row">
+            <div class="form-group col">
+                <label asp-for="NombreCliente" class="control-label"></label>
+                <input asp-for="NombreCliente" class="form-control" />
+                <span asp-validation-for="NombreCliente" class="text-danger"></span>
+            </div>
+            <div class="form-group col">
+                <label asp-for="Pais" class="control-label"></label>
+                <input asp-for="Pais" class="form-control" />
+                <span asp-validation-for="Pais" class="text-danger"></span>
+            </div>
+            <div class="form-group col">
+                <label asp-for="NumeroCelular" class="control-label"></label>
+                <input asp-for="NumeroCelular" class="form-control" />
+                <span asp-validation-for="NumeroCelular" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col">
+                <label asp-for="ValorCartera" class="control-label"></label>
+                <input asp-for="ValorCartera" class="form-control" />
+                <span asp-validation-for="ValorCartera" class="text-danger"></span>
+            </div>
+            <div class="form-group col">
+                <label asp-for="FechaVencimiento" class="control-label"></label>
+                <input asp-for="FechaVencimiento" class="form-control" />
+                <span asp-validation-for="FechaVencimiento" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check col">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Habilitado" /> @Html.DisplayNameFor(model => model.Habilitado)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Crear" class="btn btn-primary" />
+            </div>
+        </div>
+    </form>
+</div>
+
+<div>
+    <a asp-action="Index">Regreso a la lista</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

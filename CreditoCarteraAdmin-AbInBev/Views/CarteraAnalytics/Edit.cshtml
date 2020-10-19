@@ -1,0 +1,72 @@
+﻿@model CreditoCarteraAdmin_AbInBev.Models.CarteraAnalytics
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2 class="text-white-50">Editar</h2>
+
+<h4 class="text-white">CarteraAnalytics</h4>
+<hr />
+<div class="container position-relative text-white-50">
+    
+    <form asp-action="Edit">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="Id" />
+        <div class="row">
+            <div class="form-group col">
+                <label asp-for="NombreCliente" class="control-label"></label>
+                <input asp-for="NombreCliente" class="form-control" />
+                <span asp-validation-for="NombreCliente" class="text-danger"></span>
+            </div>
+            <div class="form-group col">
+                <label asp-for="Pais" class="control-label"></label>
+                <input asp-for="Pais" class="form-control" />
+                <span asp-validation-for="Pais" class="text-danger"></span>
+            </div>
+            <div class="form-group col">
+                <label asp-for="NumeroCelular" class="control-label"></label>
+                <input asp-for="NumeroCelular" class="form-control" />
+                <span asp-validation-for="NumeroCelular" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col">
+                <label asp-for="ValorCartera" class="control-label"></label>
+                <input asp-for="ValorCartera" class="form-control" />
+                <span asp-validation-for="ValorCartera" class="text-danger"></span>
+            </div>
+            <div class="form-group col">
+                <label asp-for="FechaVencimiento" class="control-label"></label>
+                <input asp-for="FechaVencimiento" class="form-control" />
+                <span asp-validation-for="FechaVencimiento" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check col">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Habilitado" /> @Html.DisplayNameFor(model => model.Habilitado)
+                </label>
+            </div>
+            <div class="form-group col">
+                <label asp-for="SmsEnviados" class="control-label"></label>
+                <input asp-for="SmsEnviados" class="form-control" />
+                <span asp-validation-for="SmsEnviados" class="text-danger"></span>
+            </div>
+            <div class="form-group col">
+                <label asp-for="LlamadasHechas" class="control-label"></label>
+                <input asp-for="LlamadasHechas" class="form-control" />
+                <span asp-validation-for="LlamadasHechas" class="text-danger"></span>
+            </div>
+            <div class="form-group col">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </div>
+</form>
+</div>
+
+<div>
+    <a asp-action="Index">Regresar</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

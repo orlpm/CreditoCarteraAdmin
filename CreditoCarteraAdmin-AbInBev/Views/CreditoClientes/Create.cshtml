@@ -1,0 +1,71 @@
+﻿@model CreditoCarteraAdmin_AbInBev.Models.CreditoCliente
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2 class="text-white-50">Crear nuevo registro de credito</h2>
+
+<h4 class="text-white">Crédito Cliente</h4>
+<hr />
+<div class="container position-relative text-white-50">
+    <form asp-action="Create">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="row">
+            <div class="form-group col">
+                <label asp-for="NombreCliente" class="control-label"></label>
+                <input asp-for="NombreCliente" class="form-control" />
+                <span asp-validation-for="NombreCliente" class="text-danger"></span>
+            </div>
+            <div class="form-group col">
+                <label asp-for="CreditoAnterior" class="control-label"></label>
+                <input asp-for="CreditoAnterior" class="form-control" />
+                <span asp-validation-for="CreditoAnterior" class="text-danger"></span>
+            </div>
+            <div class="form-group col">
+                <label asp-for="CreditoNuevo" class="control-label"></label>
+                <input asp-for="CreditoNuevo" class="form-control" />
+                <span asp-validation-for="CreditoNuevo" class="text-danger"></span>
+            </div>
+            <div class="form-group col">
+                <label asp-for="FechaRegistro" class="control-label"></label>
+                <input asp-for="FechaRegistro" class="form-control" />
+                <span asp-validation-for="FechaRegistro" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group form-check col">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="ClienteNuevo" /> @Html.DisplayNameFor(model => model.ClienteNuevo)
+                </label>
+            </div>
+            <div class="form-group form-check col">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="StatusCreditoNuevo" /> @Html.DisplayNameFor(model => model.StatusCreditoNuevo)
+                </label>
+            </div>
+            <div class="form-group col">
+                <label asp-for="NumeroCelular" class="control-label"></label>
+                <input asp-for="NumeroCelular" class="form-control" />
+                <span asp-validation-for="NumeroCelular" class="text-danger"></span>
+            </div>
+            @*<div class="form-group">
+                    <label asp-for="NumeroEnvios" class="control-label"></label>
+                    <input asp-for="NumeroEnvios" class="form-control" />
+                    <span asp-validation-for="NumeroEnvios" class="text-danger"></span>
+                </div>*@
+            <div class="form-group col">
+                <input type="submit" value="Crear" class="btn btn-primary"/>
+            </div>
+
+        </div>
+    </form>
+</div>
+
+<div>
+    <a asp-action="Index">Regresar</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,80 @@
+﻿@model IEnumerable<CreditoCarteraAdmin_AbInBev.Models.CreditoCliente>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2 class="text-white">Créditos de Clientes</h2>
+
+<p>
+    <a asp-action="Create">Crear Nuevo</a>
+</p>
+<div class="table-responsive">
+    <table class="table text-white-50">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.NombreCliente)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CreditoAnterior)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CreditoNuevo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FechaRegistro)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ClienteNuevo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.StatusCreditoNuevo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NumeroCelular)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NumeroEnvios)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NombreCliente)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreditoAnterior)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreditoNuevo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FechaRegistro)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ClienteNuevo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StatusCreditoNuevo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NumeroCelular)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NumeroEnvios)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Modificar</a> |
+                        @*<a asp-action="Details" asp-route-id="@item.Id">Details</a> |*@
+                        <a asp-action="Delete" asp-route-id="@item.Id">Borrar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

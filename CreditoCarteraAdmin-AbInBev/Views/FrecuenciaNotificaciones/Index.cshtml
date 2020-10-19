@@ -1,0 +1,65 @@
+﻿@model IEnumerable<CreditoCarteraAdmin_AbInBev.Models.FrecuenciaNotificaciones>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2></h2>
+
+<p>
+    <a asp-action="Create">Crear</a>
+</p>
+<table class="table text-white-50">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreCampaña)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DiasPrevios)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumeroEnvios)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.HoraEnvio)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.CadaMinuto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CadaHora)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreCampaña)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiasPrevios)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumeroEnvios)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.HoraEnvio)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.CadaMinuto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CadaHora)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                @*<a asp-action="Details" asp-route-id="@item.Id">Details</a> |*@
+                <a asp-action="Delete" asp-route-id="@item.Id">Borrar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

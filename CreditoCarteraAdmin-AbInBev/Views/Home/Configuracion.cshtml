@@ -1,0 +1,21 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container d-flex h-100 align-items-center">
+    
+    <div class="mx-auto text-center">
+        <div class="row">
+            <div class="col"><a class="btn btn-primary js-scroll-trigger" asp-controller="LlamadaNotificacion" asp-action="Index">Llamadas de Notificación</a></div>
+            <div class="col"><a class="btn btn-primary js-scroll-trigger" asp-controller="MensajeNotificacion" asp-action="Index">Mensajes de Notificación</a></div>
+            <div class="col"><a class="btn btn-primary js-scroll-trigger" asp-controller="FrecuenciaNotificaciones" asp-action="Index">Frecuencia de notificaciones</a></div>
+        </div>
+    </div>
+
+</div>
+
+
+

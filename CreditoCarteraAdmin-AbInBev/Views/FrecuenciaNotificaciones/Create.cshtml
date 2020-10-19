@@ -1,0 +1,75 @@
+﻿@model CreditoCarteraAdmin_AbInBev.Models.FrecuenciaNotificaciones
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2 class="text-white-50">Crear</h2>
+
+<h4 class="text-white">Frecuencia de Notificaciones</h4>
+<hr />
+<div class="container position-relative text-white-50">
+    <form asp-action="Create">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="row">
+            <div class="form-group col-auto">
+                <label asp-for="NombreCampaña" class="control-label"></label>
+                <select id="select1" asp-for="NombreCampaña" class="form-control">
+                    <option selected disabled>Tipo de Mensaje</option>
+                    <option>MensajesCartera</option>
+                    <option>MensajesCreditoNuevo</option>
+                    <option>LlamadasCartera</option>
+                </select>
+                <span asp-validation-for="NombreCampaña" class="text-danger"></span>
+            </div>
+            <div class="form-group col-auto">
+                <label asp-for="DiasPrevios" class="control-label"></label>
+                <input asp-for="DiasPrevios" class="form-control" />
+                <span asp-validation-for="DiasPrevios" class="text-danger"></span>
+            </div>
+            <div class="form-group col-auto">
+                <label asp-for="NumeroEnvios" class="control-label"></label>
+                <input asp-for="NumeroEnvios" class="form-control" />
+                <span asp-validation-for="NumeroEnvios" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row">
+            @*<div class="form-group col">
+                <label asp-for="HoraEnvio" class="control-label"></label>
+                <input asp-for="HoraEnvio" class="form-control" />
+                <span asp-validation-for="HoraEnvio" class="text-danger"></span>
+            </div>*@
+            <div class="form-group col">
+                <label asp-for="CadaMinuto" class="control-label"></label>
+                <select id="select1" asp-for="CadaMinuto" class="form-control">
+                    <option selected disabled>Cada minuto</option>
+                    <option>0</option>
+                    <option>30</option>
+                </select>
+                <span asp-validation-for="CadaMinuto" class="text-danger"></span>
+            </div>
+            <div class="form-group col">
+                <label asp-for="CadaHora" class="control-label"></label>
+                <select id="select1" asp-for="CadaHora" class="form-control">
+                    <option selected disabled>Cada hora</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                </select>
+                <span asp-validation-for="CadaHora" class="text-danger"></span>
+            </div>
+            <div class="form-group col">
+                <input type="submit" value="Crear" class="btn btn-primary" />
+            </div>
+        </div>
+    </form>
+</div>
+
+<div>
+    <a asp-action="Index">Regresar a la lista</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

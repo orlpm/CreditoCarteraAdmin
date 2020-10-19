@@ -1,0 +1,19 @@
+﻿@using System.Security.Principal
+@using System.Web;
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@if (User.Identity.IsAuthenticated)
+{
+    <div class="text-center">
+        <h2 class="text-white-50 mx-auto mt-2 mb-5">Bienvenido al Portal de crédito y cobranza de Grupo Modelo.</h2>
+        <p><a href="https://www.gmodelo.mx/">Gestione sus activos de cartera y asignación de créditos</a>.</p>
+    </div>
+}
+else
+{
+    Context.Response.Redirect(Url.Action("login", "Cuenta"));
+}
+
+

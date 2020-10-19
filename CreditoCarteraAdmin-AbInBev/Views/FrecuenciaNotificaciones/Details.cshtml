@@ -1,0 +1,54 @@
+﻿@model CreditoCarteraAdmin_AbInBev.Models.FrecuenciaNotificaciones
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>FrecuenciaNotificaciones</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NombreCampaña)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NombreCampaña)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DiasPrevios)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DiasPrevios)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NumeroEnvios)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NumeroEnvios)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.HoraEnvio)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.HoraEnvio)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CadaMinuto)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CadaMinuto)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CadaHora)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CadaHora)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Modificar</a> |
+    <a asp-action="Index">Regresar</a>
+</div>

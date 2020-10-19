@@ -1,0 +1,80 @@
+﻿@model IEnumerable<CreditoCarteraAdmin_AbInBev.Models.CarteraAnalytics>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2 class="text-white">Cobranza de Cartera</h2>
+
+<p>
+    <a asp-action="Create">Crear nuevo</a>
+</p>
+<div class="table-responsive">
+    <table class="table text-white-50 ">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.NombreCliente)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Pais)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NumeroCelular)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ValorCartera)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FechaVencimiento)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Habilitado)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SmsEnviados)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LlamadasHechas)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NombreCliente)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Pais)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NumeroCelular)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ValorCartera)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FechaVencimiento)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Habilitado)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SmsEnviados)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LlamadasHechas)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Modificar</a> |
+                        @*<a asp-action="Details" asp-route-id="@item.Id">Detalles</a> |*@
+                        <a asp-action="Delete" asp-route-id="@item.Id">Borrar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div> 

@@ -1,0 +1,38 @@
+﻿@model CreditoCarteraAdmin_AbInBev.Models.LlamadaNotificacion
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1 class="text-white-50">Crear</h1>
+
+<h4 class="text-white">Llamada de Notificacion</h4>
+<hr />
+<div class="container position-relative text-white-50">
+    <div class="col">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="BlobStorageURL" class="control-label"></label>
+                <input asp-for="BlobStorageURL" class="form-control" />
+                <span asp-validation-for="BlobStorageURL" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DiasPrevios" class="control-label"></label>
+                <input asp-for="DiasPrevios" class="form-control" />
+                <span asp-validation-for="DiasPrevios" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Crear" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Regresar</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
